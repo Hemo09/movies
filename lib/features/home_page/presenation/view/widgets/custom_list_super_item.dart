@@ -12,7 +12,7 @@ class CustomListViewSuperItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(15.0),
       child: Container(
         color: const Color(0xff111111),
-        width: 180,
+        width: 165,
         height: 300,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,7 +23,7 @@ class CustomListViewSuperItem extends StatelessWidget {
               width: 200,
               fit: BoxFit.fill,
               placeholder: (context, url) =>
-                  Center(child: Image.asset("assets/gif/spinner.gif")),
+                  const Center(child: CircularProgressIndicator()),
               errorWidget: (context, url, error) =>
                   const Center(child: Icon(Icons.error)),
             ),

@@ -6,8 +6,8 @@ import 'package:movie_app/features/home_page/presenation/view/widgets/custom_lis
 import 'package:movie_app/features/home_page/presenation/view/widgets/custom_list_view_up_coming.dart';
 import 'package:movie_app/features/home_page/presenation/view/widgets/custom_row_header.dart';
 
-class HomePageBody extends StatelessWidget {
-  const HomePageBody({super.key});
+class SeriesPageBody extends StatelessWidget {
+  const SeriesPageBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class HomePageBody extends StatelessWidget {
         child: Column(
           children: [
             CustomRowHeader(
-              text: "Now Playing",
+              text: "Airing Today",
               press: () {
                 GoRouter.of(context)
-                    .push(NamedScreen.kFullListScreen, extra: "Now Playing");
+                    .push(NamedScreen.kFullListScreen, extra: "Airing Today");
               },
             ),
             const CustomListView(),
@@ -45,10 +45,10 @@ class HomePageBody extends StatelessWidget {
               height: 10,
             ),
             CustomRowHeader(
-              text: "Up Coming",
+              text: "On The Air",
               press: () {
                 GoRouter.of(context)
-                    .push(NamedScreen.kFullListScreen, extra: "Up Coming");
+                    .push(NamedScreen.kFullListScreen, extra: "On The Air");
               },
             ),
           ],

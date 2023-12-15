@@ -28,6 +28,11 @@ class CustomListItemUpComing extends StatelessWidget {
                     width: 160,
                     fit: BoxFit.fill,
                     imageUrl: testImage2,
+                    placeholder: (context, url) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
                   ),
                 ),
               ),
