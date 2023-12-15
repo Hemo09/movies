@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/features/home_page/presenation/view/widgets/custom_list_view.dart';
+import 'package:movie_app/features/home_page/presenation/view/widgets/custom_list_view_super.dart';
 import 'package:movie_app/features/home_page/presenation/view/widgets/custom_row_header.dart';
 
 class HomePageBody extends StatelessWidget {
@@ -7,13 +8,16 @@ class HomePageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        CustomRowHeader(
-          text: "Now Playing",
-        ),
+    return const CustomScrollView(slivers: [
+      SliverToBoxAdapter(
+          child: Column(children: [
+        CustomRowHeader(text: "Now Playing"),
         CustomListView(),
-      ],
-    );
+        CustomRowHeader(text: "popular"),
+        CustomListViewSuper(),
+        CustomRowHeader(text: "Top Rated"),
+        CustomListViewSuper(),
+      ]))
+    ]);
   }
 }

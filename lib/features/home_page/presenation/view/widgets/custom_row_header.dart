@@ -9,20 +9,21 @@ class CustomRowHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15.0, right: 5, left: 5, bottom: 10),
+      padding: const EdgeInsets.only(top: 15.0, right: 8, left: 8, bottom: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            "Now Playing",
-            style: TextStyle(
-              fontSize: 14,
+          Text(
+            text,
+            style: const TextStyle(
+              fontSize: 15,
               color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           InkWell(
             onTap: press,
-            child: Text("See All",
+            child: Text("SEE ALL",
                 style: TextStyle(
                   color: kPrimaryColor,
                   fontSize: 14,

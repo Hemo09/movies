@@ -18,7 +18,8 @@ class CustomListItem extends StatelessWidget {
             fit: BoxFit.fill,
             placeholder: (context, url) =>
                 Center(child: Image.asset("assets/gif/spinner.gif")),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+            errorWidget: (context, url, error) =>
+                const Center(child: Icon(Icons.error)),
           ),
         ),
       ),
