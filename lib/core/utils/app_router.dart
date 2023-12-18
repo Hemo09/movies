@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:movie_app/features/film_details/presentaion/views/film_details.dart';
 import 'package:movie_app/features/home_page/presenation/view/full_list_films.dart';
 import 'package:movie_app/features/home_page/presenation/view/home_page.dart';
 import 'package:movie_app/features/home_page/presenation/view/series_page.dart';
@@ -7,6 +8,7 @@ class NamedScreen {
   static const kHomeScreen = "/homeScreen";
   static const kFullListScreen = "/fullListScreen";
   static const kSeriesScreen = "/SeriesScreen";
+  static const kFilmDetails = "/filmDetails";
 }
 
 class AppRouter {
@@ -24,6 +26,9 @@ class AppRouter {
       GoRoute(
           path: NamedScreen.kSeriesScreen,
           builder: (context, state) => const SeriesPage()),
+      GoRoute(
+          path: NamedScreen.kFilmDetails,
+          builder: (context, state) => const FilmDetails()),
     ],
   );
 }
