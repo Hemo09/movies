@@ -1,8 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:movie_app/constant.dart';
+import 'package:movie_app/core/utils/app_router.dart';
 import 'package:movie_app/features/film_details/presentaion/views/widgets/film_content.dart';
-import 'package:movie_app/features/film_details/presentaion/views/widgets/reviews.dart';
+import 'package:movie_app/features/film_details/presentaion/views/widgets/reviews_list_view.dart';
+import 'package:movie_app/features/home_page/presenation/view/widgets/custom_row_header.dart';
 
 class FilmDetailsBody extends StatelessWidget {
   const FilmDetailsBody({super.key});
@@ -38,11 +41,16 @@ class FilmDetailsBody extends StatelessWidget {
               ),
             ),
             const FilmContent(),
-            const SizedBox(
-              height: 10,
+            CustomRowHeader(
+              text: "Reviews",
+              press: () {
+                GoRouter.of(context).push(NamedScreen.kFullListScreen);
+              },
             ),
-            const Reviews(),
           ]),
+        ),
+        const SliverToBoxAdapter(
+          child: ReviewsListView(),
         ),
       ],
     );

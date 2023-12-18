@@ -1,11 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:movie_app/constant.dart';
-import 'package:movie_app/core/utils/app_router.dart';
 import 'package:movie_app/features/film_details/presentaion/views/widgets/user_rating.dart';
-import 'package:movie_app/features/home_page/presenation/view/widgets/custom_row_header.dart';
-import 'package:movie_app/features/home_page/presenation/view/widgets/film_rating.dart';
 
 class Reviews extends StatelessWidget {
   const Reviews({super.key});
@@ -14,31 +10,31 @@ class Reviews extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomRowHeader(
-          text: "Reviews",
-          press: () {
-            GoRouter.of(context).push(NamedScreen.kFullListScreen);
-          },
-        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                CircleAvatar(
-                  radius: 30,
-                  child: CachedNetworkImage(
-                    imageUrl: testImage2,
-                    placeholder: (context, url) {
-                      return const Center(child: CircularProgressIndicator());
-                    },
-                    errorWidget: (context, url, error) {
-                      return Image.asset(
-                        errorUser,
-                        fit: BoxFit.cover,
-                      );
-                    },
+                SizedBox(
+                  width: 60,
+                  height: 60,
+                  child: ClipOval(
+                    child: CachedNetworkImage(
+                      imageUrl: testImage2,
+                      fit: BoxFit.cover,
+                      placeholder: (context, url) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      },
+                      errorWidget: (context, url, error) {
+                        return Image.asset(errorUser);
+                      },
+                    ),
                   ),
+                ),
+                const SizedBox(
+                  width: 3,
                 ),
                 Column(
                   children: [
