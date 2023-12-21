@@ -6,20 +6,17 @@ class ReviewsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
-      child: ListView.separated(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return const Reviews();
-          },
-          separatorBuilder: (context, index) {
-            return const SizedBox(
-              height: 6,
-            );
-          },
-          itemCount: 10),
-    );
+    return ListView.separated(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index) {
+          return const Reviews();
+        },
+        separatorBuilder: (context, index) {
+          return const SizedBox(
+            height: 6,
+          );
+        },
+        itemCount: 10);
   }
 }
